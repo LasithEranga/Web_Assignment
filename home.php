@@ -27,17 +27,37 @@
     
     </style>
     <body>
+    <?php include("db.php");  ?>
     <?php include("sidebar.php");  ?>
     
-     <div class="col-lg-10 vh-100 bg-light d-lg-block">
+     <div class="col-lg-10 vh-100 bg-light d-lg-block" style="overflow-y: scroll;">
      <?php
 
-        //include("overview.php");
+        include("overview.php");
+        
+        
+        if(isset($_GET['add_child'])){
 
+            include("add_child.php");
+            
+        }
+
+        if(isset($_GET['add_doner'])){
+
+            include("add_doner.php");
+            
+        }
+
+        if(isset($_GET['add_labour'])){
+
+            include("add_labour.php");
+            
+        }
+    
 
     ?>
     </div>
-    
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
    
 </body>

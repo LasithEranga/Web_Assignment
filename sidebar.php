@@ -49,8 +49,9 @@
                                 </p>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body ps-5 text-white lh-1">
-                                        <p>Add Child</p><br>
-                                        <p>View Child</p>
+                                        <a href="./add_child.php">Add Child</a><br>
+                                        <a href="./view_child.php">View Child</a><br>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -85,14 +86,12 @@
                 </div>
 
                 <div class="accordion-item bg-dark border-0" style="box-shadow: none !important;">
-                    <p class="" id="headingTwo">
                     <button class="ps-4  accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         <i class="fa fa-fw fa-money"></i><span  class="ps-2"> Donations</span><i id="arrow" class="fas fa-caret-down text-white ps-3"></i>
                     </button>
-                    </p>
                     <div id="collapseTwo" class="accordion-collapse collapse bg-dark" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body ps-5 text-white lh-1">
-                            <p>Add Donations</p><br>
+                            <p> <a href="home.php?add_doner">Add Donations</a></p><br>
                             <p>View Donations</p>
                         </div>
                     </div>
@@ -107,7 +106,7 @@
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="accordion-body ps-4 text-white lh-1">
-                                <p>Add Staff</p><br>
+                                <p><a href="home.php?add_staff">Add Staff</a></p><br>
                                 <p>View Staff</p>
                             </div>
                         </div>
@@ -122,8 +121,8 @@
                     </p>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body ps-5 text-white lh-1">
-                            <p>Add Child</p><br>
-                            <p>View Child</p>
+                            <p><a href="home.php?add_child">Add Child</a></p><br>
+                            <p><a href="./view_child.php">View Child</a></p>
                         </div>
                     </div>
                 </div>
@@ -136,7 +135,7 @@
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                         <div class="accordion-body ps-5 text-white lh-1">
-                            <p>Add Labours</p><br>
+                            <p><a href="home.php?add_labour">Add Labours</a></p><br>
                             <p>View Labours</p><br>
                             <p>View Labour Salary</p>
                         </div>
