@@ -37,7 +37,7 @@ $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_err
                         <td><?php echo $list['email']; ?></td>
                         <td><?php echo $list['post']; ?></td>
                         <td>
-                           <a href="home.php?edit_labour=<?php echo $developer['nic']; ?>">
+                           <a href="home.php?edit_labour=<?php echo $list['nic']; ?>">
 
                                 <i class="fa fa-pencil"> </i> Edit
 
@@ -46,7 +46,7 @@ $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_err
                         </td>
                         
                         <td>
-                           <a href="home.php?delete_labour=<?php echo $developer['nic']; ?>">
+                           <a href="home.php?delete_labour=<?php echo $list['nic']; ?>">
 
                                 <i class="fa fa-trash-o"> </i> Delete
 

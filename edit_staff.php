@@ -53,6 +53,7 @@ if (isset($_GET['edit_staff'])) {
                 </div>
             </div>
 
+
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
