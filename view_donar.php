@@ -7,6 +7,22 @@ if (isset($_GET['view_donar'])) {
 
     $sqlQuery = "SELECT * from donations WHERE donar_id='$view_id'";
     $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_error($Con));
+
+    $get_data = "SELECT * from donars WHERE donar_id='$view_id'";
+    $result = mysqli_query($Con, $get_data);
+
+    $row = mysqli_fetch_array($result);
+    $donarName = $row['donarName'];
+    $contactNo = $row['contactNo'];
+    $Address = $row['Address'];
+    $donationType = $row['donationType'];
+
+    //getting the total donations
+    $query = "SELECT SUM(amount) as amount from donations WHERE donar_id='$view_id'";
+    $result_total = mysqli_query($Con, $query);
+
+    $total = mysqli_fetch_array($result_total);
+    $donar_total = $total['amount'];
 }
 
 ?>
@@ -16,42 +32,39 @@ if (isset($_GET['view_donar'])) {
     <div class="d-flex flex-row col-md-12">
         <div class="col-5 ms-5">
             <form>
-                <div class="d-flex flex-column col-md-12 border">
-                    <div class="bg-light py-2 border mb-2"><i id="arrow" class="fa fa-fw fa-money text-dark pe-4 ps-2"></i>Doner Details </div>
-                    <div class="p-2">
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control mb-2" id="inputPassword">
+                <fieldset disabled>
+                    <div class="d-flex flex-column col-md-12 border">
+                        <div class="bg-light py-2 border mb-2"><i id="arrow" class="fa fa-fw fa-money text-dark pe-4 ps-2"></i>Doner Details </div>
+                        <div class="p-2">
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-3 col-form-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control mb-2" value="<?php echo $donarName ?>">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Contact No</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control mb-2" id="inputPassword">
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-3 col-form-label">Contact No</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control mb-2" value="<?php echo $contactNo ?>">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Address</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control mb-2" id="inputPassword">
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-3 col-form-label">Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control mb-2" value="<?php echo $Address ?>">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-4">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Donation Type</label>
-                            <div class="col-sm-9 mt-2">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Select Donation Type</option>
-                                    <option value="1">Cash</option>
-                                    <option value="2">Item</option>
-                                    <option value="3">Both</option>
-                                </select>
+                            <div class="form-group row mb-4">
+                                <label for="inputPassword" class="col-sm-3 col-form-label">Donation Type</label>
+                                <div class="col-sm-9 mt-2">
+                                    <input type="text" class="form-control mb-2" value="<?php echo $donationType ?>">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </fieldset>
             </form>
         </div>
         <!-- row -->
@@ -60,15 +73,21 @@ if (isset($_GET['view_donar'])) {
         </div>
         <div class="bg-primary col-md-5 p-4 d-flex flex-row text-white" style="height: 150px;">
             <i class="fa fa-money fa-5x "></i>
-            <span class="text-end  col-md-9 fs-1 "><span class="fs-3">Total Donations</span> <br><span id="total">Rs
-                    0.00</span> </span>
+            <span class="text-end  col-md-9 fs-1 "><span class="fs-3">Total Donations</span> <br><span id="total">
+                    <?php if ($donar_total > 0) {
+                        echo "Rs:" .$donar_total;
+                    } else {
+                        echo "Rs:0.00";
+                    } ?></span> </span>
         </div>
     </div>
-    <div class="col-md-12  mt-2 text-dark ps-5">
-        Donated Items
-    </div>
-    <div class="col-12 d-flex justify-content-center align-content-center ">
-        <div class="col-12 px-2 ">
+
+    <div class="col-12 d-flex justify-content-center align-content-center px-2">
+
+        <div class="col-12 px-4 ">
+            <div class="  mt-2 text-light fs-5 ps-2 mb-2 py-2 text-center bg-dark">
+                Donated Items
+            </div>
             <table id="data" class="table  table-hover">
                 <thead class="table-dark">
                     <tr>

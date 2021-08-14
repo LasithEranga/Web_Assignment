@@ -1,6 +1,6 @@
 <?php
 include("db.php");
-$sqlQuery = "SELECT * FROM staff ";
+$sqlQuery = "SELECT * FROM labour_details ";
 $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_error($Con));
 ?>
 <div class="col-12 py-3"></div>
@@ -15,23 +15,44 @@ $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_err
         <table id="data" class="table  table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th>ID</th>
+                    <th>NIC</th>
                     <th>Name</th>
+                    <th>Birthday</th>
                     <th>Contact No</th>
                     <th>Address</th>
                     <th>Email</th>
-                    <th>Password</th>
+                    <th>Post</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php while ($developer = mysqli_fetch_assoc($resultSet)) { ?>
-                    <tr id="<?php echo $developer['id']; ?>">
-                        <td><?php echo $developer['id']; ?></td>
-                        <td><?php echo $developer['name']; ?></td>
-                        <td><?php echo $developer['contact_num']; ?></td>
-                        <td><?php echo $developer['address']; ?></td>
-                        <td><?php echo $developer['email']; ?></td>
-                        <td><?php echo $developer['password']; ?></td>
+            <tbody class="tb_data">
+                <?php while ($list = mysqli_fetch_assoc($resultSet)) { ?>
+                    <tr id="<?php echo $list['nic']; ?>">
+                        <td><?php echo $list['nic']; ?></td>
+                        <td><?php echo $list['name_initals']; ?></td>
+                        <td><?php echo $list['dob']; ?></td>
+                        <td><?php echo $list['contact_number']; ?></td>
+                        <td><?php echo $list['address']; ?></td>
+                        <td><?php echo $list['email']; ?></td>
+                        <td><?php echo $list['post']; ?></td>
+                        <td>
+                           <a href="home.php?edit_labour=<?php echo $developer['nic']; ?>">
+
+                                <i class="fa fa-pencil"> </i> Edit
+
+                            </a>
+
+                        </td>
+                        
+                        <td>
+                           <a href="home.php?delete_labour=<?php echo $developer['nic']; ?>">
+
+                                <i class="fa fa-trash-o"> </i> Delete
+
+                            </a>
+
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

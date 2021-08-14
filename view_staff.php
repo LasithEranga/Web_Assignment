@@ -5,7 +5,7 @@ $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_err
 ?>
 <div class="col-12 py-3"></div>
 <div class="col-12 pt-5 px-2">
-    <p class="bg-dark py-2 text-white"><i id="arrow" class="fa fa-fw fa-money text-light pe-4 ps-2"></i> View Staff</p>
+    <p class="bg-dark py-2 text-white"><i id="arrow" class="fa fa-fw fa-users text-light pe-4 ps-2"></i> View Staff</p>
     <div class="col-sm-12">
         <input type="text" class="form-control mb-2" id="search" placeholder="Search Staff" onkeyup="Search()">
     </div>
@@ -15,23 +15,42 @@ $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_err
         <table id="data" class="table  table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th>ID</th>
+                    <th>NIC</th>
                     <th>Name</th>
                     <th>Contact No</th>
                     <th>Address</th>
                     <th>Email</th>
                     <th>Password</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php while ($developer = mysqli_fetch_assoc($resultSet)) { ?>
-                    <tr id="<?php echo $developer['id']; ?>">
-                        <td><?php echo $developer['id']; ?></td>
-                        <td><?php echo $developer['name']; ?></td>
-                        <td><?php echo $developer['contact_num']; ?></td>
-                        <td><?php echo $developer['address']; ?></td>
-                        <td><?php echo $developer['email']; ?></td>
-                        <td><?php echo $developer['password']; ?></td>
+            <tbody class="tb_data">
+                <?php while ($data_list = mysqli_fetch_assoc($resultSet)) { ?>
+                    <tr id="<?php echo $data_list['nic']; ?>">
+                        <td><?php echo $data_list['nic']; ?></td>
+                        <td><?php echo $data_list['name']; ?></td>
+                        <td><?php echo $data_list['contact_num']; ?></td>
+                        <td><?php echo $data_list['address']; ?></td>
+                        <td><?php echo $data_list['email']; ?></td>
+                        <td><?php echo $data_list['password']; ?></td>
+                        <td>
+                           <a href="home.php?edit_staff=<?php echo $data_list['nic']; ?>">
+
+                                <i class="fa fa-pencil"> </i> Edit
+
+                            </a>
+
+                        </td>
+                        
+                        <td>
+                           <a href="home.php?delete_staff=<?php echo $data_list['nic']; ?>">
+
+                                <i class="fa fa-trash-o"> </i> Delete
+
+                            </a>
+
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

@@ -115,6 +115,10 @@
 
             include("edit_staff.php");
         }
+        if (isset($_GET['edit_labour'])) {
+
+            include("edit_labour.php");
+        }
 
         //edit users end
 
