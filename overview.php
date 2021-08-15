@@ -14,12 +14,12 @@ $labour = mysqli_query($Con,$sqlQuery);
 ?>
 
 <div class="col-12 py-3"></div>
-    <div class="col-md-12 justify-content-center align-items-center d-flex">
-        <div class="col-md-11  ">
+    <div class="col-md-12 col-12 justify-content-center align-items-center d-flex">
+        <div class="col-md-11 ">
             <h1 class="ps-4 pt-4">Overview</h1>
             <hr>
-            <div class="d-flex row">
-                <div class="card mx-2 bg-blue text-light" style="width: 15rem;">
+            <div class="d-flex row col-12 justify-content-center align-items-center ">
+                <div class="card m-2 py-2  bg-blue text-light" style="width: 15rem;">
                     <div class="card-body ">
                         <div class="d-flex ">
                             <i class="fa fa-money fa-4x"></i>
@@ -33,7 +33,7 @@ $labour = mysqli_query($Con,$sqlQuery);
                     </div>
                 </div>
 
-                <div class="card mx-2 bg-blue text-light" style="width: 15rem;">
+                <div class="card m-2 bg-blue text-light" style="width: 15rem;">
                     <div class="card-body ">
                         <div class="d-flex ">
                             <i class="fa fa-child fa-5x fa-4x"></i>
@@ -48,7 +48,7 @@ $labour = mysqli_query($Con,$sqlQuery);
                 </div>
                 
 
-                <div class="card mx-2 bg-blue text-white" style="width: 15rem;">
+                <div class="card m-2 bg-blue text-white" style="width: 15rem;">
                     <div class="card-body ">
                         <div class="d-flex ">
                             <i class="fa fa-user fa-4x "></i>
@@ -62,7 +62,7 @@ $labour = mysqli_query($Con,$sqlQuery);
                     </div>
                 </div>
 
-                <div class="card mx-2 bg-blue text-white" style="width: 15rem;">
+                <div class="card m-2 bg-blue text-white" style="width: 15rem;">
                     <div class="card-body ">
                         <div class="d-flex ">
                             <i class="fa fa-male fa-5x"></i>
@@ -120,26 +120,14 @@ $labour = mysqli_query($Con,$sqlQuery);
                 var myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: ['April', 'May', 'June', 'July', 'Aug', 'Sept'],
                         datasets: [{
-                            label: '# of Votes',
+                            label: 'Donations',
                             data: [12, 19, 3, 5, 2, 3, 5],
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(0, 122, 204, 0.5)',
                             ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
+                            
                             borderWidth: 1
                         }]
                     },

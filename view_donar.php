@@ -28,12 +28,12 @@ if (isset($_GET['view_donar'])) {
 ?>
 
 <div class="col-12 py-5"> </div>
-<div class="d-flex flex-column">
-    <div class="d-flex flex-row col-md-12">
-        <div class="col-5 ms-5">
+<div class="d-flex flex-column ">
+    <div class="d-flex flex-column flex-lg-row  col-12">
+        <div class="col-10 col-lg-5 ms-5">
             <form>
                 <fieldset disabled>
-                    <div class="d-flex flex-column col-md-12 border">
+                    <div class="d-flex flex-column  col-md-12 border">
                         <div class="bg-light py-2 border mb-2"><i id="arrow" class="fa fa-fw fa-money text-dark pe-4 ps-2"></i>Doner Details </div>
                         <div class="p-2">
                             <div class="form-group row">
@@ -71,14 +71,16 @@ if (isset($_GET['view_donar'])) {
         <div class="bg-light col-md-1">
 
         </div>
-        <div class="bg-primary col-md-5 p-4 d-flex flex-row text-white" style="height: 150px;">
-            <i class="fa fa-money fa-5x "></i>
-            <span class="text-end  col-md-9 fs-1 "><span class="fs-3">Total Donations</span> <br><span id="total">
-                    <?php if ($donar_total > 0) {
-                        echo "Rs:" .$donar_total;
-                    } else {
-                        echo "Rs:0.00";
-                    } ?></span> </span>
+        <div class=" col-12 col-lg-5 d-flex justify-content-center align-content-center px-2">
+            <div class="bg-primary col-10 my-2 p-4 d-flex flex-row text-white d-flex " style="height: 150px;">
+                <i class="fa fa-money fa-5x "></i>
+                <span class="text-end pe-3 pb-3 col-md-9 fs-1 ps-4"><span class="fs-3">Total Donations</span> <br><span id="total">
+                        <?php if ($donar_total > 0) {
+                            echo "Rs:" . $donar_total;
+                        } else {
+                            echo "Rs:0.00";
+                        } ?></span> </span>
+            </div>
         </div>
     </div>
 
