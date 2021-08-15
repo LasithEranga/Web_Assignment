@@ -1,12 +1,20 @@
 function ValidateNic(text, error) {
-    let len = nicNo.Length;
-    if (len == 10) {
+    let len = document.getElementById(text).value.length;
+    if (len == 0) {
+        document.getElementById(error).innerHTML = "NIC field is required!";
+        document.getElementById(error).style.display = "block";
+        return false;
+    }
+    else if (len == 10) {
         //pattern1
         let rgx = /^\d{9}[vxVX]{1}$/
-        if (rgx.IsMatch(nicNo)) {
+        if (document.getElementById(text).value.match(rgx)) {
+            document.getElementById(error).style.display = "none";
             return true;
         }
         else {
+            document.getElementById(error).innerHTML = "Invalid NIC number";
+            document.getElementById(error).style.display = "block";
             return false;
         }
 
@@ -15,16 +23,22 @@ function ValidateNic(text, error) {
     else if (len == 12) {
         //pattern 2
         var rgx = /^\d{12}$/;
-        if (rgx.IsMatch(nicNo)) {
+        if (document.getElementById(text).value.match(rgx)) {
+
+            document.getElementById(error).style.display = "none";
             return true;
         }
         else {
+            document.getElementById(error).innerHTML = "Invalid NIC number";
+            document.getElementById(error).style.display = "block";
             return false;
         }
 
     }
     else {
         //empty
+        document.getElementById(error).innerHTML = "Invalid NIC number";
+        document.getElementById(error).style.display = "block";
         return false;
     }
 
@@ -66,6 +80,42 @@ function ValidateDob(dob, error) {
 
 }
 
+function ValidatePassword(password, error) {
+
+    if (document.getElementById(password).value.length > 0) {
+        document.getElementById(error).style.display = "none";
+        return true;
+    }
+    else {
+        document.getElementById(error).style.display = "block";
+        return false;
+    }
+
+}
+
+function ValidateSalary(salary, error) {
+    if (document.getElementById(salary).value.length > 0) {
+        let rgx = /^[0-9.]+$/
+        if (document.getElementById(salary).value.match(rgx)) {
+            document.getElementById(error).style.display = "none";
+            return true;
+        }
+        else {
+            document.getElementById(error).innerHTML ="Salary value is invalid!";
+            document.getElementById(error).style.display = "block";
+            return false;
+        }
+    } 
+    else {
+
+        document.getElementById(error).innerHTML ="Salary is required!";
+        document.getElementById(error).style.display = "block";
+        return false;
+
+    }
+
+}
+
 function ValidateGender(field, error) {
     if (document.getElementById(field).value == "Select Gender") {
         document.getElementById(error).style.display = "block";
@@ -86,6 +136,40 @@ function ValidateSelection(field, error) {
         document.getElementById(error).style.display = "none";
         return true;
     }
+}
+
+function ValidatePost(field, error) {
+    if (document.getElementById(field).value == "Select Post") {
+        document.getElementById(error).style.display = "block";
+        return false;
+    }
+    else {
+        document.getElementById(error).style.display = "none";
+        return true;
+    }
+}
+
+
+function ValidateEmail(email, error) {
+    if (document.getElementById(email).value.length > 0) {
+        rgx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+        if (document.getElementById(email).value.match(rgx)) {
+            document.getElementById(error).style.display = "none";
+            return true;
+        }
+        else {
+            document.getElementById(error).innerHTML = "Email is invalid!";
+            document.getElementById(error).style.display = "block";
+            return false;
+        }
+
+    }
+    else {
+        document.getElementById(error).innerHTML = "Email is required!";
+        document.getElementById(error).style.display = "block";
+        return false;
+    }
+
 }
 
 function ValidateAddress(address, error, message) {
