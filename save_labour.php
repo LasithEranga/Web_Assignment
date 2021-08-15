@@ -17,6 +17,6 @@ include('db.php');
 
   if ($saved) {
     echo "<script> alert('User updated successfully ')</script>";
-    echo "<script> window.open('home.php?view_donation','_self')</script>";
+    echo "<script> window.open('home.php?view_labour','_self')</script>";
   }
 ?>
