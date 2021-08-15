@@ -50,6 +50,10 @@
         <?php
 
         include("overview.php");
+        if (isset($_GET['overview'])) {
+
+            include("overview.php");
+        }
 
         // Add users start
         if (isset($_GET['add_child'])) {

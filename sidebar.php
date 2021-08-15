@@ -7,6 +7,9 @@
         <div class="collapse navbar-collapse d-lg-none" id="navbarNavDropdown">
             <ul class="navbar-nav d-lg-none">
                 <li class="nav-item">
+                    <div class="text-white py-3 px-4" style="margin-top: 100px;" id="overview">
+                        <i class="fa fa-fw fa-dashboard"></i><span class="ps-2" id="overview"><a href="home.php?overview">Overview</a></span>
+                    </div>
                     <div class="accordion-item bg-dark mt-3 border-0" style="box-shadow: none !important;">
                         <p class="" id="headingTwo">
                             <button class="ps-4  accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -15,8 +18,8 @@
                         </p>
                         <div id="collapseTwo" class="accordion-collapse collapse bg-dark" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body ps-5 text-white lh-1">
-                                <p>Add Donations</p><br>
-                                <p>View Donations</p>
+                                <p> <a href="home.php?add_doner">Add Donations</a></p><br>
+                                <p> <a href="home.php?view_donation">View Donations</a></p>
                             </div>
                         </div>
                     </div>
@@ -32,8 +35,8 @@
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="accordion-body ps-5 text-white lh-1">
-                                    <p>Add Staff</p><br>
-                                    <p>View Staff</p>
+                                    <p><a href="home.php?add_staff">Add Staff</a></p><br>
+                                    <p><a href="home.php?view_staff">View Staff</a></p>
                                 </div>
                             </div>
                         </div>
@@ -49,8 +52,8 @@
                         </p>
                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                             <div class="accordion-body ps-5 text-white lh-1">
-                                <a href="./add_child.php">Add Child</a><br>
-                                <a href="./view_child.php">View Child</a><br>
+                                <p><a href="home.php?add_child">Add Child</a></p><br>
+                                <p><a href="home.php?view_child">View Child</a></p>
 
                             </div>
                         </div>
@@ -66,9 +69,9 @@
                         </p>
                         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                             <div class="accordion-body ps-5 text-white lh-1">
-                                <p>Add Labours</p><br>
-                                <p>View Labours</p><br>
-                                <p>View Labour Salary</p>
+                                <p><a href="home.php?add_labour">Add Labours</a></p><br>
+                                <p><a href="home.php?view_labour">View Labours</a></p><br>
+                                <p><a href="home.php?view_labour_salary">View Labour Salary</a></p>
                             </div>
                         </div>
                     </div>
@@ -81,8 +84,8 @@
 <div class="dashboard d-flex flex-row ">
     <div class="col-lg-2 vh-100 bg-dark d-none d-lg-block" style="overflow-y: scroll;">
         <div class="accordion " id="accordionExample">
-            <div class="text-white py-3 px-4" style="margin-top: 100px;">
-                <i class="fa fa-fw fa-dashboard"></i><span class="ps-2">Overview</span>
+            <div class="text-white py-3 px-4" style="margin-top: 100px;" id="overview">
+                <i class="fa fa-fw fa-dashboard"></i><span class="ps-2" ><a href="home.php?overview">Overview</a></span>
             </div>
 
             <div class="accordion-item bg-dark border-0" style="box-shadow: none !important;">
