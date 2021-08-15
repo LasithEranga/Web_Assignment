@@ -8,7 +8,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4f128951c5.js" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .accordion-button:focus {
             z-index: 3;
@@ -39,6 +39,13 @@
         .tb_data a:hover {
             color: blue;
         }
+        
+        .card-body a {
+            color: rgb(245, 245, 255);
+        }
+        .bg-blue{
+            background-color: #337ab7;
+        }
     </style>
 </head>
 
@@ -48,8 +55,6 @@
 
     <div class="col-lg-10 vh-100 bg-light d-lg-block" style="overflow-y: scroll;">
         <?php
-
-        include("overview.php");
         if (isset($_GET['overview'])) {
 
             include("overview.php");
