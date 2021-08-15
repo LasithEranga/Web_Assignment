@@ -20,7 +20,6 @@ $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_err
                     <th>Contact No</th>
                     <th>Address</th>
                     <th>Email</th>
-                    <th>Password</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -33,7 +32,6 @@ $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_err
                         <td><?php echo $data_list['contact_num']; ?></td>
                         <td><?php echo $data_list['address']; ?></td>
                         <td><?php echo $data_list['email']; ?></td>
-                        <td><?php echo $data_list['password']; ?></td>
                         <td>
                            <a href="home.php?edit_staff=<?php echo $data_list['nic']; ?>">
 

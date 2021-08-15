@@ -1,7 +1,7 @@
 
 <?php
 include("db.php");
-$sqlQuery = "SELECT d.donarName, d.contactNo , DATE(d.date) as date, TRUNCATE(SUM(n.amount),2) as amount FROM donars d, donations n GROUP BY n.donar_id; ";
+$sqlQuery = "SELECT d.donarName, d.contactNo , DATE(d.date) as date, TRUNCATE(SUM(n.amount),2) as amount FROM donars d, donations n GROUP BY d.donarName; ";
 $resultSet = mysqli_query($Con, $sqlQuery) or die("database error:" . mysqli_error($Con));
 $sqlQuery = "SELECT TRUNCATE(SUM(amount),2) as amount FROM donations;";
 $donation = mysqli_query($Con,$sqlQuery);

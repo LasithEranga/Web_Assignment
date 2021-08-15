@@ -146,7 +146,7 @@
             </div>
 
             <div class="text-white py-3 px-4">
-                <i class="fa fa-fw fa-power-off"></i><span class="ps-2">Logout</span>
+                <i class="fa fa-fw fa-power-off"></i><a href="logout.php">Logout</a></span>
             </div>
         </div>
     </div>

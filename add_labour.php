@@ -49,8 +49,8 @@
         <div class="col-lg-9">
           <select class="form-select" aria-label="Default select example" id="gender" name="gender">
             <option selected>Select Gender</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
           <p id="err_gender" style="color: lightcoral;display:none">Please select the gender</p>
         </div>

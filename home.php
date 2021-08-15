@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+include("db.php");
+
+
+if(!isset($_SESSION['username'])){
+
+echo "<script>window.open('login.php','_self')</script>";
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

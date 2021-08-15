@@ -34,26 +34,25 @@ include('db.php');
         </div>
         <div class="col-md-6 p-2 ps-4">
           <P class="fs-2 pb-4">SAMADHI CHILDREN HOME</P>
-          <form class="pb-5" method="POST">
+          <form id="form" class="pb-5" method="POST">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              <label for="name" class="form-label">Username</label>
+              <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" >
             </div>
             <div class="mb-4">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="pass">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="pass" >
             </div>
-            <button type="submit " class="btn btn-primary" name="login" onclick="validate()">Submit</button>
+            <button type="submit " class="btn btn-primary" name="login" >Submit</button>
           </form>
+          
         </div>
       </div>
     </div>
   </div>
   <script>
     function validate() {
-      allLetter(document.getElementById("exampleInputEmail1"));
-
+      document.getElementById("form").submit();
     }
 
     function allLetter(inputtxt) {
@@ -70,31 +69,29 @@ include('db.php');
 </body>
 
 </html>
-<!-- 
+
 <?php
 
 if(isset($_POST['login'])){
 
-    $uname = mysqli_real_escape_string($Con,$_POST['email']);
+    $uname = mysqli_real_escape_string($Con,$_POST['name']);
     
     $pass = mysqli_real_escape_string($Con,$_POST['pass']);
-    $get_admin = "select * from staff where email='$uname' AND password='$pass'";
-    
-    $run_admin = mysqli_query($Con,$get_admin);
+    $query = "SELECT * FROM staff WHERE name='$uname' AND password='$pass'";
+    $run_admin = mysqli_query($Con,$query);
     $count = mysqli_num_rows($run_admin);
 
 if($count==1){
-
     $_SESSION['username']=$uname;
-    echo "<script>window.open('index.php?overview','_self')</script>";
+    echo "<script>alert('You are Logged in into system ')</script>";
+    echo "<script>window.open('home.php?overview','_self')</script>";
 
 }
 else {
-  //echo "<script>alert('$get_admin')</script>";
   echo "<script>alert('Username or Password is Wrong')</script>";
 
 }
 
 }
 
-?> -->
+?>
